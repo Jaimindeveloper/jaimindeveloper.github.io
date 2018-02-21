@@ -46,6 +46,20 @@ $(document).ready(function(){
 	// $(document).on("contextmenu",function(e){        
 	// 	e.preventDefault();
 	// });
+
+	var ipaddress = '';
+	var city = '';
+	var country = '';
+	var otherDetail = '';
+
+	$.get("http://ipinfo.io", function (response) {
+		ipaddress = response.ip;
+		city = response.ip;
+		country = response.region;
+		otherDetail = JSON.stringify(response, null, 4);
+	}, "jsonp");
+		
+			
 	$('#contact-form').click(function(){
 
 		var name = $('#name').val();
@@ -58,10 +72,7 @@ $(document).ready(function(){
 		var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 		var nameregex = new RegExp("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$");
 		var numregex = new RegExp("^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$");
-		var ipaddress = '';
-		var city = '';
-		var country = '';
-		var otherDetail = '';
+		
  		if(name == '' || !nameregex.test(name)){
 			var datamsg = $('#name').attr('data-msg-required');
 			$('#name').after('<div class="alert-danger tempalert animated shake msgname">'+datamsg+'</div>');
@@ -97,12 +108,7 @@ $(document).ready(function(){
 			$('.msgmessage').remove();
 		}
 
-		$.get("http://ipinfo.io", function (response) {
-			ipaddress = response.ip;
-			city = response.ip;
-			country = response.region;
-			otherDetail = JSON.stringify(response, null, 4);
-		}, "jsonp");
+		
 
 		if(arlene1.length <= 0){
 			var loadingText = $('#contact-form').attr('data-loading-text');
