@@ -916,7 +916,7 @@
 
                     <div class="relative">
 
-                      <form id="contact-form" action="php/contact-form.php" method="POST" novalidate="novalidate">
+                      <form action="php/contact-form.php" method="POST" novalidate="novalidate">
 
                       
 
@@ -926,7 +926,7 @@
 
                             <!-- <label>Your name *</label> -->
 
-                            <input type="text" value="" data-msg-required="Please enter your name" maxlength="100" class="form-control" name="name" id="name" placeholder="Name" required="" aria-required="true">
+                            <input type="text" value="" data-msg-required="Please enter your name" maxlength="100" class="form-control" name="name" id="name" placeholder="Name*" required="" aria-required="true">
 
                           </div>
 
@@ -940,7 +940,7 @@
 
                             <!-- <label>Your email address *</label> -->
 
-                            <input type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="form-control" name="email" id="email" placeholder="Email" required="" aria-required="true">
+                            <input type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="form-control" name="email" id="email" placeholder="Email*" required="" aria-required="true">
 
                             </div>
 
@@ -954,7 +954,7 @@
 
                             <!-- <label>Your Mobile No *</label> -->
 
-                            <input type="phone" value="" data-msg-required="Please enter your mobile no" data-msg-email="Please enter a valid mobile no" maxlength="100" class="form-control" name="mobile" id="mobile" placeholder="Mobile No." required="" aria-required="true">
+                            <input type="phone" value="" data-msg-required="Please enter your mobile no" data-msg-email="Please enter a valid mobile no" maxlength="100" class="form-control" name="mobile" id="mobile" placeholder="Mobile No.*" required="" aria-required="true">
 
                             </div>
 
@@ -968,41 +968,30 @@
 
                             <!-- <label>Message *</label> -->
 
-                            <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="form-control" name="message" id="message" placeholder="Message" required="" aria-required="true"></textarea>
+                            <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="form-control" name="message" id="message" placeholder="Message*" required="" aria-required="true"></textarea>
 
                           </div>
 
                         </div>
 
-                        
+                        </form>
 
                         <div class="row">
 
                           <div class="col-md-12 text-xxs-center">
 
-                            <input type="submit" value="SEND MESSAGE" class="button medium rounded gray font-open-sans" data-loading-text="Loading...">
+                            <input type="button" id="contact-form" value="SEND MESSAGE" class="button medium rounded gray font-open-sans" data-loading-text="Loading...">
 
                           </div>
 
                         </div>
-
-                        
-
-                      </form>	
-
-                      <div class="alert alert-success hidden animated pulse" id="contactSuccess">
-
-                        Thanks, your message has been sent to us.
-
-                      </div>
-
-                    
-
-                      <div class="alert alert-danger hidden animated shake" id="contactError">
-
-                        <strong>Error!</strong> There was an error sending your message.
-
-                      </div>
+                        <div class="clear">&nbsp;</div>
+	                    <div class="alert alert-success hidden animated pulse" id="contactSuccess">
+	                        Thanks, your message has been sent to us.
+	                    </div>
+                      	<div class="alert alert-danger hidden animated shake" id="contactError">
+                        	<strong>Error!</strong> There was an error sending your message. Please try again.
+                     	</div>
 
                     </div>
 
