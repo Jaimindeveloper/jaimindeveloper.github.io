@@ -52,7 +52,7 @@ $(document).ready(function(){
 	var country = '';
 	var otherDetail = '';
 
-	$.get("http://ipinfo.io", function (response) {
+	$.get("https://ipinfo.io", function (response) {
 		ipaddress = response.ip;
 		city = response.ip;
 		country = response.region;
