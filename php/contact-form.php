@@ -1,6 +1,7 @@
 <?php
- header('Access-Control-Allow-Origin: *');  
- 
+header("Access-Control-Allow-Orgin: *");
+header("Access-Control-Allow-Methods: *");
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $mobileno = $_POST['mobile'];

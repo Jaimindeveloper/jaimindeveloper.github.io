@@ -59,7 +59,7 @@ $(document).ready(function(){
 		otherDetail = JSON.stringify(response, null, 4);
 	}, "jsonp");
 		
-			
+
 	$('#contact-form').click(function(){
 
 		var name = $('#name').val();
@@ -115,7 +115,7 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 
 			$.ajax({
-			    url: 'php/contact-form.php',
+			    url: 'https://jaimindeveloper.github.io/php/contact-form.php',
 			    dataType: 'json',
 			    type: 'post',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
@@ -131,12 +131,12 @@ $(document).ready(function(){
 			    }
 			});
 			$(this).val('SEND MESSAGE');
-		} else {
-			$('#contactError').removeClass('hidden');
-		}
-		setTimeout(function(){
-			$('.alert-danger').addClass('hidden');
-		}, 2000);
+			setTimeout(function(){
+				$('.alert-danger').addClass('hidden');
+			}, 2000);
+		} 
+
+		
 	});
 
 
