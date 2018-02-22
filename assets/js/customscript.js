@@ -25,7 +25,7 @@ $(document).ready(function(){
 	    }, 2000);
 
 	});
-	$(document).keydown(function (event) {
+	/*$(document).keydown(function (event) {
 		if (event.keyCode == 123) { // Prevent F12
 			return false;
 		} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 	$(document).on("contextmenu",function(e){        
 		e.preventDefault();
-	});
+	}); */
 
 	var ipaddress = '';
 	var city = '';
@@ -115,12 +115,16 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 
 			$.ajax({
-			    url: 'https://jaimindeveloper.github.io/php/contact-form.php',
+			    url: 'php/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
 			    success: function( data, textStatus, jQxhr ){
 			    	if(data == 0){
+						$('#name').val('');
+						$('#email').val('');
+						$('#mobile').val('');
+						$('#message').val('');
 			    		$('#contactSuccess').removeClass('hidden');
 			    	} else {
 			    		$('#contactError').removeClass('hidden');
@@ -133,7 +137,8 @@ $(document).ready(function(){
 			$(this).val('SEND MESSAGE');
 			setTimeout(function(){
 				$('.alert-danger').addClass('hidden');
-			}, 2000);
+				$('.alert-success').addClass('hidden');
+			}, 5000);
 		} 
 
 		
