@@ -117,7 +117,7 @@ $(document).ready(function(){
 			$.ajax({
 			    url: 'https://jaimindeveloper.github.io/php/contact-form.php',
 			    dataType: 'json',
-			    type: 'post',
+			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
 			    success: function( data, textStatus, jQxhr ){
 			    	if(data == 0){
