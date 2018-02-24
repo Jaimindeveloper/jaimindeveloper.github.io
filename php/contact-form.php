@@ -1,6 +1,8 @@
 <?php
-header('Access-Control-Allow-Origin: https://jaimindeveloper.github.io/');
+header('Access-Control-Allow-Origin: jaimindeveloper.github.io');
 header('Access-Control-Allow-Methods: POST');
+header('Accept: application/json');
+header('Content-Type: application/json');
 $name = $_POST['name'];
 $email = $_POST['email'];
 $mobileno = $_POST['mobile'];
