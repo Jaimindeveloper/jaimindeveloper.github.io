@@ -115,7 +115,7 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 
 			$.ajax({
-			    url: 'https://plugins.svn.wordpress.org/sliding-enquiry-form/assets/php/contact-form.php',
+			    url: 'php/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
