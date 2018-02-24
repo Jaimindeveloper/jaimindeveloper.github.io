@@ -25,7 +25,7 @@ $(document).ready(function(){
 	    }, 2000);
 
 	});
-	/*$(document).keydown(function (event) {
+	$(document).keydown(function (event) {
 		if (event.keyCode == 123) { // Prevent F12
 			return false;
 		} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 	$(document).on("contextmenu",function(e){        
 		e.preventDefault();
-	}); */
+	}); 
 
 	var ipaddress = '';
 	var city = '';
@@ -115,7 +115,7 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 
 			$.ajax({
-			    url: 'php/contact-form.php',
+			    url: 'https://jaimindeveloper.000webhostapp.com/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
