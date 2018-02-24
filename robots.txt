@@ -1,4 +1,4 @@
-User-agent: httrack
+User-agent: HTTrack Website Copier
 Disallow: /
 User-agent: NetCaptor
 Disallow: /
