@@ -3,6 +3,10 @@ header('Access-Control-Allow-Origin: jaimindeveloper.github.io');
 header('Access-Control-Allow-Methods: POST');
 header('Accept: application/json');
 header('Content-Type: application/json');
+
+ini_set("SMTP","mail.gmail.com");
+ini_set("smtp_port","25");
+ini_set('sendmail_from', 'jaimin.suthar12@gmail.com');
 $name = $_POST['name'];
 $email = $_POST['email'];
 $mobileno = $_POST['mobile'];
