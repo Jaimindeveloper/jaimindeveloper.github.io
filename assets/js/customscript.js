@@ -113,9 +113,9 @@ $(document).ready(function(){
 		if(arlene1.length <= 0){
 			var loadingText = $('#contact-form').attr('data-loading-text');
 			$(this).val(loadingText);
-
+			// url: 'http://jaiminsutahr.byethost7.com/contact-form.php',
 			$.ajax({
-			    url: 'https://jaimindeveloper.000webhostapp.com/contact-form.php',
+			    url: 'http://jaiminsutahr.byethost7.com/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
