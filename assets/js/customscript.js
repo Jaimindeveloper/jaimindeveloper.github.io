@@ -115,7 +115,7 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 
 			$.ajax({
-			    url: 'php/contact-form.php',
+			    url: 'http://jaimindeveloper.000webhostapp.com/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
