@@ -25,27 +25,27 @@ $(document).ready(function(){
 	    }, 2000);
 
 	});
-	$(document).keydown(function (event) {
-		if (event.keyCode == 123) { // Prevent F12
-			return false;
-		} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
-			return false;
-		}
-	});
-	$(document).keydown(function(event){
-		if(event.keyCode==123){
-		    return false;
-		} else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-		   return false;
-		} 
-		if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
-		   //Alt+c, Alt+v will also be disabled sadly.
-		    return false;
-		}          
-	});
-	$(document).on("contextmenu",function(e){        
-		e.preventDefault();
-	}); 
+	// $(document).keydown(function (event) {
+	// 	if (event.keyCode == 123) { // Prevent F12
+	// 		return false;
+	// 	} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+	// 		return false;
+	// 	}
+	// });
+	// $(document).keydown(function(event){
+	// 	if(event.keyCode==123){
+	// 	    return false;
+	// 	} else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+	// 	   return false;
+	// 	} 
+	// 	if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
+	// 	   //Alt+c, Alt+v will also be disabled sadly.
+	// 	    return false;
+	// 	}          
+	// });
+	// $(document).on("contextmenu",function(e){        
+	// 	e.preventDefault();
+	// }); 
 
 	var ipaddress = '';
 	var city = '';
@@ -115,7 +115,7 @@ $(document).ready(function(){
 			$(this).val(loadingText);
 			// url: 'http://jaiminsutahr.byethost7.com/contact-form.php',
 			$.ajax({
-			    url: 'http://jaimindeveloper.000webhostapp.com/contact-form.php',
+			    url: 'https://jaimindeveloper.000webhostapp.com/contact-form.php',
 			    dataType: 'json',
 			    type: 'POST',
 			    data: {name: name, email: email, mobile: mobile, message: message, ipaddress: ipaddress, city: city, country: country, otherDetail: otherDetail},
