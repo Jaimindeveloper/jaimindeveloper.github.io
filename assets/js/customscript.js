@@ -25,7 +25,7 @@ $(document).ready(function(){
 	    }, 2000);
 
 	});
-	/*$(document).keydown(function (event) {
+	$(document).keydown(function (event) {
 		if (event.keyCode == 123) { // Prevent F12
 			return false;
 		} else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 	$(document).on("contextmenu",function(e){        
 		e.preventDefault();
-	}); */
+	}); 
 
 	var ipaddress = '';
 	var city = '';
@@ -113,7 +113,7 @@ $(document).ready(function(){
 		if(arlene1.length <= 0){
 			var loadingText = $('#contact-form').attr('data-loading-text');
 			$(this).val(loadingText);
-
+			// url: 'http://jaiminsutahr.byethost7.com/contact-form.php',
 			$.ajax({
 			    url: 'http://jaimindeveloper.000webhostapp.com/contact-form.php',
 			    dataType: 'json',
