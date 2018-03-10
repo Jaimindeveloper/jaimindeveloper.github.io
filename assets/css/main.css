@@ -290,6 +290,9 @@ sm {
     font-size: 20px;
     color: white;
 }
+.headeremail:hover {
+	color: #2c3e50;
+}
 .mb-40 {
     margin-bottom: 40px !important;
 }
