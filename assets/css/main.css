@@ -35,6 +35,10 @@ p {
     text-align: center;
 }
 
+.lefted {
+	text-align: left;
+}
+
 /* Links */
 a {
     color: #f85c37;
@@ -153,7 +157,7 @@ a:after {
 
 /* Header Wrap */
 #headerwrap {
-	background: url(../img/header-bg1.jpg) no-repeat center top;
+	background: url(../img/header-bg2.jpg) no-repeat center top;
 	margin-top: 60px;
 	padding-top:140px;
 	text-align:center;
