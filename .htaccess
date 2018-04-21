@@ -5,46 +5,21 @@ ExpiresByType image/jpg "access 1 year"
 ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"
 ExpiresByType image/png "access 1 year"
-ExpiresByType text/css "access 1 month"
-ExpiresByType text/html "access 1 month"
+ExpiresByType text/css "access 1 year"
+ExpiresByType text/js "access 1 year"
 ExpiresByType application/pdf "access 1 month"
 ExpiresByType text/x-javascript "access 1 month"
 ExpiresByType application/x-shockwave-flash "access 1 month"
 ExpiresByType image/x-icon "access 1 year"
-ExpiresByType assets/ "access 1 year"
-ExpiresDefault "access 1 month"
+ExpiresDefault "access 1 year"
 </IfModule>
 ## EXPIRES CACHING ##
+
+#Expire Header
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|swf)$">
+ExpiresDefault "access plus 2 hours"
+</FilesMatch>
 
 <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
 Header set Cache-Control "max-age=84600, public"
 </filesMatch>
-
-# HTID:4378698: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
-php_value display_errors 1
-# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:4378698:
-######################
-## Handling Options for the CORS
-     RewriteCond %{REQUEST_METHOD} OPTIONS
-     RewriteRule ^(.*)$ $1 [L,R=204]
-
-###################
-## Add custom headers
-
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-XSS-Protection "1; mode=block"
-       # Always set these headers for CORS.
-    Header always set Access-Control-Max-Age 1728000
-    Header always set Access-Control-Allow-Origin: "*"
-    Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
-    Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
-    Header always set Access-Control-Allow-Credentials true
-
-
-RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} ^FlashGet.* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^GetRight.* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^.*HTTrack.*$ [OR]
-RewriteCond %{HTTP_USER_AGENT} ^.*MemoWeb.*$ [OR]
-RewriteCond %{HTTP_USER_AGENT} ^.*FileHound.*$
-RewriteRule /* https://jaimindeveloper.github.io/ [R,L]
