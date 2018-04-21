@@ -1,20 +1,3 @@
-
-## EXPIRES CACHING ##
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType image/jpg "access plus 1 year"
-ExpiresByType image/jpeg "access plus 1 year"
-ExpiresByType image/gif "access plus 1 year"
-ExpiresByType image/png "access plus 1 year"
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/pdf "access plus 1 month"
-ExpiresByType text/x-javascript "access plus 1 month"
-ExpiresByType application/x-shockwave-flash "access plus 1 month"
-ExpiresByType image/x-icon "access plus 1 year"
-ExpiresDefault "access plus 2 days"
-</IfModule>
-## EXPIRES CACHING ##
-
 <IfModule mod_expires.c>
   ExpiresActive on
 
@@ -46,15 +29,14 @@ php_value display_errors 1
 ###################
 ## Add custom headers
 
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-XSS-Protection "1; mode=block"
-       # Always set these headers for CORS.
-    Header always set Access-Control-Max-Age 1728000
-    Header always set Access-Control-Allow-Origin: "*"
-    Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
-    Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
-    Header always set Access-Control-Allow-Credentials true
-
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+   # Always set these headers for CORS.
+Header always set Access-Control-Max-Age 1728000
+Header always set Access-Control-Allow-Origin: "*"
+Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
+Header always set Access-Control-Allow-Credentials true
 
 RewriteEngine On
 RewriteCond %{HTTP_USER_AGENT} ^FlashGet.* [OR]
