@@ -1,22 +1,3 @@
-<IfModule mod_expires.c>
-  ExpiresActive on
-
-# Your document html
-  ExpiresByType text/html "access plus 0 seconds"
-
-# Media: images, video, audio
-  ExpiresByType audio/ogg "access plus 1 month"
-  ExpiresByType image/gif "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType video/mp4 "access plus 1 month"
-  ExpiresByType video/ogg "access plus 1 month"
-  ExpiresByType video/webm "access plus 1 month"
-
-# CSS and JavaScript
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType text/css "access plus 1 year"
-</IfModule>
 
 # HTID:4378698: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
 php_value display_errors 1
@@ -29,14 +10,15 @@ php_value display_errors 1
 ###################
 ## Add custom headers
 
-Header set X-Content-Type-Options "nosniff"
-Header set X-XSS-Protection "1; mode=block"
-   # Always set these headers for CORS.
-Header always set Access-Control-Max-Age 1728000
-Header always set Access-Control-Allow-Origin: "*"
-Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
-Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
-Header always set Access-Control-Allow-Credentials true
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+       # Always set these headers for CORS.
+    Header always set Access-Control-Max-Age 1728000
+    Header always set Access-Control-Allow-Origin: "*"
+    Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+    Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
+    Header always set Access-Control-Allow-Credentials true
+
 
 RewriteEngine On
 RewriteCond %{HTTP_USER_AGENT} ^FlashGet.* [OR]
