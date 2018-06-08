@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	var findImage = $(this).find('img').attr('alt');
 
 	$('img').map(function(){
