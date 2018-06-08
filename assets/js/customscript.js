@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	var findImage = $(this).find('img').attr('alt');
 
 	$('img').map(function(){
@@ -14,15 +15,10 @@ $(document).ready(function(){
 	});
 
 	$(".smoothScroll").click(function() {
-
 	   var id = $(this).attr('href');
-
 	    $('html, body').animate({
-
 	        scrollTop: $(id).offset().top
-
 	    }, 2000);
-
 	});
 	$(document).keydown(function (event) {
 		if (event.keyCode == 123) { // Prevent F12
@@ -59,8 +55,6 @@ $(document).ready(function(){
 
 	}, "jsonp");
 		
-
-
 	$('#contact-form').click(function(){
 
 		var name = $('#name').val();
