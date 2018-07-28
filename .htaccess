@@ -40,16 +40,35 @@ ExpiresDefault "access plus 1 month"
   ExpiresByType text/html "access plus 600 seconds"
   ExpiresByType application/xhtml+xml "access plus 600 seconds"
 </ifModule>
-pagespeed on;
-# Needs to exist and be writable by nginx.  Use tmpfs for best performance.
-pagespeed FileCachePath /var/ngx_pagespeed_cache;
-# Ensure requests for pagespeed optimized resources go to the pagespeed handler
-# and no extraneous headers get set.
-location ~ "\.pagespeed\.([a-z]\.)?[a-z]{2}\.[^.]{10}\.[^.]+" {
-  add_header "" "";
-}
-location ~ "^/pagespeed_static/" { }
-location ~ "^/ngx_pagespeed_beacon$" { }
+ModPagespeed On
+ModPagespeedInheritVHostConfig on
+ModPagespeedFileCachePath "/var/cache/mod_pagespeed/"
+ModPagespeedEnableFilters combine_css,combine_javascript
+# Direct Apache to send all HTML output to the mod_pagespeed
+# output handler.
+AddOutputFilterByType MOD_PAGESPEED_OUTPUT_FILTER text/html
+
+NameVirtualHost *:80
+<VirtualHost *:80>
+  DocumentRoot /www/example1
+  ServerName www.example1.com
+  ModPagespeedMapRewriteDomain cdn.example1.com *example.com
+</VirtualHost>
+
+<VirtualHost *:80>
+  DocumentRoot /www/example2
+  ServerName www.example2.org
+  ModPagespeedMapRewriteDomain cdn.example2.org *example.org
+  # Don't want combine_css here
+  ModPagespeedDisableFilters combine_css
+</VirtualHost>
+
+<VirtualHost *:80>
+  DocumentRoot /www/example3
+  ServerName www.example3.org
+  # mod_pagespeed off for this virtual host
+  ModPagespeed Off
+</VirtualHost>
 # END Expire headers
 # BEGIN Cache-Control Headers
 <ifModule mod_headers.c>
