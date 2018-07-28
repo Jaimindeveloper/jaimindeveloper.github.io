@@ -18,29 +18,29 @@
     <title>Jaimin Suthar | Software Developer</title>
 
 
-
-    <!-- Bootstrap core CSS -->
-
-    <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet">
-
-
-
-    <!-- Custom styles for this template -->
-
-    <link href="assets/css/main.css" type="text/css" rel="stylesheet">
-
+    <noscript id="deferred-styles">
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="assets/css/main.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    </noscript>
     
-
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-
-    
-
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-
-    
-
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
     <script type="text/javascript" type="text/javascript" src="assets/js/smoothscroll.js" defer></script> 
