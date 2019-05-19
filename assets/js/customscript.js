@@ -103,6 +103,9 @@ $(document).ready(function() {
                     country: country,
                     otherDetail: otherDetail
                 },
+                beforeSend: function(xhr){
+                    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://www.mrheggwhites.com');
+                },
                 success: function(data, textStatus, jQxhr) {
                     if (data == 0) {
                         $('#name').val('');
