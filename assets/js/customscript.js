@@ -91,6 +91,7 @@ $(document).ready(function() {
             $.ajax({
                 url: 'http://www.mrheggwhites.com/contact-form.php',
                 dataType: 'json',
+                crossDomain: true,
                 type: 'POST',
                 data: {
                     name: name,
