@@ -89,10 +89,11 @@ $(document).ready(function() {
             var loadingText = $('#contact-form').attr('data-loading-text');
             $(this).val(loadingText);
             $.ajax({
-                url: 'http://www.mrheggwhites.com/contact-form.php',
+                url: 'https://jaimindeveloper.github.io/contact-form.php',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8", 
                 crossDomain: true,
+                headers: {"Access-Control-Allow-Origin": "http://www.mrheggwhites.com", "Origin": "http://www.mrheggwhites.com", "Access-Control-Request-Headers": "*", "Access-Control-Request-Method": "*"},
                 type: 'POST',
                 data: {
                     name: name,
@@ -103,12 +104,6 @@ $(document).ready(function() {
                     city: city,
                     country: country,
                     otherDetail: otherDetail
-                },
-                beforeSend: function(xhr){
-                    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://www.mrheggwhites.com');
-                    xhr.setRequestHeader('Origin', 'http://www.mrheggwhites.com');
-                    xhr.setRequestHeader('Access-Control-Request-Headers', '*');
-                    xhr.setRequestHeader('Access-Control-Request-Method', '*');
                 },
                 success: function(data, textStatus, jQxhr) {
                     if (data == 0) {
