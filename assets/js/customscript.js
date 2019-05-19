@@ -89,7 +89,7 @@ $(document).ready(function() {
             var loadingText = $('#contact-form').attr('data-loading-text');
             $(this).val(loadingText);
             $.ajax({
-                url: 'https://jaimindeveloper.github.io/contact-form.php',
+                url: 'http://www.mrheggwhites.com/contact-form.php',
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8", 
                 crossDomain: true,
