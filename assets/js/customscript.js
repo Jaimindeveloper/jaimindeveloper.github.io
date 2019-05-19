@@ -93,7 +93,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 contentType: "application/json; charset=utf-8", 
                 crossDomain: true,
-                headers: {"Access-Control-Allow-Origin": "http://www.mrheggwhites.com", "Origin": "http://www.mrheggwhites.com", "Access-Control-Request-Headers": "*", "Access-Control-Request-Method": "*"},
+                headers: {"Access-Control-Allow-Origin": "http://www.mrheggwhites.com", "Origin": "http://www.mrheggwhites.com", "Access-Control-Request-Headers": "Origin", "Access-Control-Request-Method": "POST, GET, OPTIONS","Access-Control-Allow-Credentials":"true"},
                 type: 'POST',
                 data: {
                     name: name,
