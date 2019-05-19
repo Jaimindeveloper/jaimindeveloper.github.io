@@ -106,6 +106,9 @@ $(document).ready(function() {
                 },
                 beforeSend: function(xhr){
                     xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://www.mrheggwhites.com');
+                    xhr.setRequestHeader('Origin', 'http://www.mrheggwhites.com');
+                    xhr.setRequestHeader('Access-Control-Request-Headers', '*');
+                    xhr.setRequestHeader('Access-Control-Request-Method', '*');
                 },
                 success: function(data, textStatus, jQxhr) {
                     if (data == 0) {
