@@ -88,38 +88,39 @@ $(document).ready(function() {
         if (arlene1.length <= 0) {
             var loadingText = $('#contact-form').attr('data-loading-text');
             $(this).val(loadingText);
-            $.ajax({
-                url: 'http://www.mrheggwhites.com/contact-form.php',
-                dataType: 'json',
-                contentType: "application/json; charset=utf-8", 
-                crossDomain: true,
-                headers: {"Access-Control-Allow-Origin": "http://www.mrheggwhites.com/", "Origin": "http://www.mrheggwhites.com/", "Access-Control-Request-Headers": "origin", "Access-Control-Request-Method": "POST, GET, OPTIONS","Access-Control-Allow-Credentials":"true"},
-                type: 'POST',
-                data: {
-                    name: name,
-                    email: email,
-                    mobile: mobile,
-                    message: message,
-                    ipaddress: ipaddress,
-                    city: city,
-                    country: country,
-                    otherDetail: otherDetail
-                },
-                success: function(data, textStatus, jQxhr) {
-                    if (data == 0) {
-                        $('#name').val('');
-                        $('#email').val('');
-                        $('#mobile').val('');
-                        $('#message').val('');
-                        $('#contactSuccess').removeClass('hidden')
-                    } else {
-                        $('#contactError').removeClass('hidden')
-                    }
-                },
-                error: function(jqXhr, textStatus, errorThrown) {
-                    $('#contactError').removeClass('hidden')
-                }
+            $.post('http://www.mrheggwhites.com/contact-form.php', {test: 'test'}, function(result){
+                console.log(result);
             });
+            // $.ajax({
+            //     url: 'http://www.mrheggwhites.com/contact-form.php',
+            //     crossDomain: true,
+            //     headers: {"Access-Control-Allow-Origin": "http://www.mrheggwhites.com/", "Origin": "http://www.mrheggwhites.com/", "Access-Control-Request-Headers": "origin", "Access-Control-Request-Method": "POST, GET, OPTIONS","Access-Control-Allow-Credentials":"true"},
+            //     type: 'POST',
+            //     data: {
+            //         name: name,
+            //         email: email,
+            //         mobile: mobile,
+            //         message: message,
+            //         ipaddress: ipaddress,
+            //         city: city,
+            //         country: country,
+            //         otherDetail: otherDetail
+            //     },
+            //     success: function(data, textStatus, jQxhr) {
+            //         if (data == 0) {
+            //             $('#name').val('');
+            //             $('#email').val('');
+            //             $('#mobile').val('');
+            //             $('#message').val('');
+            //             $('#contactSuccess').removeClass('hidden')
+            //         } else {
+            //             $('#contactError').removeClass('hidden')
+            //         }
+            //     },
+            //     error: function(jqXhr, textStatus, errorThrown) {
+            //         $('#contactError').removeClass('hidden')
+            //     }
+            // });
             $(this).val('SEND MESSAGE');
             setTimeout(function() {
                 $('.alert-danger').addClass('hidden');
