@@ -88,9 +88,13 @@ $(document).ready(function() {
         if (arlene1.length <= 0) {
             var loadingText = $('#contact-form').attr('data-loading-text');
             $(this).val(loadingText);
-            $.post('http://www.mrheggwhites.com/contact-form.php', {test: 'test'}, function(result){
-                console.log(result);
-            });
+            // $.post('http://www.mrheggwhites.com/contact-form.php', {test: 'test'}, function(result, status){
+            //     console.log(result);
+            // });
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "http://www.mrheggwhites.com/contact-form.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("fname=Henry&lname=Ford");
             // $.ajax({
             //     url: 'http://www.mrheggwhites.com/contact-form.php',
             //     crossDomain: true,
