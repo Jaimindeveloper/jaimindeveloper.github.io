@@ -94,7 +94,7 @@ $(document).ready(function() {
             var xhttp = new XMLHttpRequest();
             xhttp.open("POST", "http://www.mrheggwhites.com/contact-form.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("name="+name+"&email="+email+"&mobile="+mobile+"&message="+message+"&ipaddress="+ipaddress+"&city="+city+"&country="+country+"&otherDetail="+otherDetail+");
+            xhttp.send("name="+name+"&email="+email+"&mobile="+mobile+"&message="+message+"&ipaddress="+ipaddress+"&city="+city+"&country="+country+"&otherDetail="+otherDetail);
             // $.ajax({
             //     url: 'http://www.mrheggwhites.com/contact-form.php',
             //     crossDomain: true,
