@@ -12,23 +12,23 @@ $(document).ready(function() {
             scrollTop: $(id).offset().top
         }, 2000)
     });
-    $(document).keydown(function(event) {
-        if (event.keyCode == 123) {
-            return !1
-        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-            return !1
-        }
-    });
-    $(document).keydown(function(event) {
-        if (event.keyCode == 123) {
-            return !1
-        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-            return !1
-        }
-        if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
-            return !1
-        }
-    });
+    // $(document).keydown(function(event) {
+    //     if (event.keyCode == 123) {
+    //         return !1
+    //     } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    //         return !1
+    //     }
+    // });
+    // $(document).keydown(function(event) {
+    //     if (event.keyCode == 123) {
+    //         return !1
+    //     } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    //         return !1
+    //     }
+    //     if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
+    //         return !1
+    //     }
+    // });
     $(document).on("contextmenu", function(e) {
         e.preventDefault()
     });
