@@ -1,0 +1,75 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Timer Clock</title>
+<!-- <script type="text/javascript" src="../timer/LIB/jquery-2.0.3.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/ion.sound.js"></script>
+<script type="text/javascript" src="../timer/jquery.countdownTimer.js"></script>
+<link rel="stylesheet" type="text/css" href="../timer/CSS/jquery.countdownTimer.css" />
+<script>
+$(document).ready(function(){
+    ion.sound({
+        sounds: [
+            {name: "beer_can_opening"},
+            {name: "bell_ring"}
+        ],
+        path: "sounds/",
+        preload: true,
+        volume: 1.0
+    });
+    $("#testbell").on("click", function(){
+        ion.sound.play("bell_ring");
+    });
+});
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td style="width:60px;text-align:center;">Minutes</td>
+            <td style="width:70px;text-align:center;">Seconds</td>
+        </tr>
+        <tr>
+            <td colspan="2"><span id="m_timer"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="clear">&nbsp;</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="pauseBtnhms">Pause</button>
+                <button id="stopBtnhms">Stop</button>
+                <button id="testbell">Test Sound</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        $(function(){
+            $('#m_timer').countdowntimer({
+                minutes : 5,
+                size : "xl",
+                pauseButton : "pauseBtnhms",
+                stopButton : "stopBtnhms",
+                timeUp : timeisUp
+            });
+            function timeisUp() {
+                ion.sound({
+                    sounds: [
+                        {name: "beer_can_opening"},
+                        {name: "bell_ring"}
+                    ],
+                    path: "sounds/",
+                    preload: true,
+                    volume: 1.0
+                });
+                ion.sound.play("bell_ring",{loop: 2});
+            }
+        });
+    </script>
+</body>
+</html>
+
